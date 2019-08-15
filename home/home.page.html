@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class = "accordion-list">
+    <ion-list-header  *ngFor="let item of information; let i = index" no-lines no-padding>
+      <button ion-item color = "primary" (click)="toggleSection(i)"  >
+        <ion-icon color = "primary"  style="font-size: 20px"item-left name = "arrow-dropright" *ngIf="!item.open" >
+        </ion-icon>
+        <ion-icon color = "primary" style="font-size: 20px" item-left name = "arrow-dropdown" *ngIf="item.open" >
+          </ion-icon>
+          <ion-label color="primary" style="font-size: 20px">
+            {{item.name}}
+          </ion-label>
+         
+      </button>
+
+    </ion-list-header>
+  </ion-list>
+</ion-content>

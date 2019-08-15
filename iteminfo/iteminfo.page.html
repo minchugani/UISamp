@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color = "primary">
+      Item Information 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-row *ngFor="let row of rows ; let i = index ">
+      <ion-col ion-col size = "4" >
+        <ion-input [(ngModel)] ="row.item"  type="text"  placeholder="Item" class="custom-input" ></ion-input>
+      </ion-col>
+      <ion-col size = "4" >
+          <ion-input [(ngModel)] ="row.department" type="text" placeholder="Department" class="custom-input"></ion-input>
+      </ion-col>
+      <ion-col size = "2" >
+      <ion-checkbox [(ngModel)]="row.check" placeholder= "Selected"></ion-checkbox>
+    </ion-col>
+    </ion-row>
+    
+    </ion-list>
+    <ion-button (click) = "add(row)" size="small">Add</ion-button>
+    <ion-button (click) = "del(row)" size="small">Delete</ion-button>
+</ion-content>
